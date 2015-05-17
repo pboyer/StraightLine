@@ -9,7 +9,6 @@ export class Interpreter {
 		if (s instanceof PrintStm){
 			console.log( this.evalExpList(s.exps) );
 		} else if (s instanceof CompoundStm){
-			
 			this.evalStm(s.stm1);
 			this.evalStm(s.stm2);
 		} else if (s instanceof AssignStm){
@@ -22,7 +21,6 @@ export class Interpreter {
 		if (e instanceof IdExp){
 			return this.env[e.id];
 		} else if (e instanceof NumExp) {
-			console.log(e.num);
 			return e.num;
 		} else if (e instanceof OpExp) {
 			return this.evalOpExp( e );
